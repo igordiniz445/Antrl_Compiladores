@@ -1,4 +1,4 @@
-// Generated from C:/Users/igorc/Desktop/ANTLR/SemanticoExemplo/src/antlr\Gramatica.g4 by ANTLR 4.9.1
+// Generated from C:/Users/igorc/Desktop/NovoTeste/src/antlr\Gramatica.g4 by ANTLR 4.9.1
 package antlr;
 
 
@@ -140,37 +140,37 @@ public class GramaticaParser extends Parser {
 			_localctx = new ProgramaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(8); 
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			do {
-				{
 				setState(8);
 				_errHandler.sync(this);
-				switch (_input.LA(1)) {
-				case TYPE:
-					{
-					setState(6);
-					decl();
-					}
-					break;
-				case ID:
-				case NUM:
-					{
-					setState(7);
-					expr(0);
-					}
-					break;
-				default:
-					throw new NoViableAltException(this);
-				}
-				}
-				setState(10); 
-				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TYPE) | (1L << ID) | (1L << NUM))) != 0) );
-			setState(12);
-			match(EOF);
+				do {
+					{
+						setState(8);
+						_errHandler.sync(this);
+						switch (_input.LA(1)) {
+							case TYPE:
+							{
+								setState(6);
+								decl();
+							}
+							break;
+							case ID:
+							case NUM:
+							{
+								setState(7);
+								expr(0);
+							}
+							break;
+							default:
+								throw new NoViableAltException(this);
+						}
+					}
+					setState(10);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TYPE) | (1L << ID) | (1L << NUM))) != 0) );
+				setState(12);
+				match(EOF);
 			}
 		}
 		catch (RecognitionException re) {

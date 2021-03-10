@@ -1,4 +1,4 @@
-// Generated from C:/Users/igorc/Desktop/ANTLR/SemanticoExemplo/src/antlr\Gramatica.g4 by ANTLR 4.9.1
+// Generated from C:/Users/igorc/Desktop/NovoTeste/src/antlr\Gramatica.g4 by ANTLR 4.9.1
 package antlr;
 
 

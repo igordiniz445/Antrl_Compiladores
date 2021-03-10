@@ -1,9 +1,0 @@
-int a=1;
-float b=2.0;
-int c=10;
-int d=2;
-a+b
-a*b
-2a+b*3
-c/2
-c-2-d
