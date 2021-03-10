@@ -61,7 +61,7 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
         SymbleTable simb = new SymbleTable();
         simb.setSimbolo(decl.id);
         simb.setTipo(decl.type);
-        simb.setPosicao(String.valueOf(SymbleTable.ENDERECO+1));
+        simb.setPosicao(String.valueOf(SymbleTable.ENDERECO));
         symbleTable.add(simb);
         return decl;
     }
@@ -138,6 +138,12 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
             divisao.setType("float");
         }
         return  divisao;
+    }
+
+    @Override
+    public Expression visitExpressaoFinal(GramaticaParser.ExpressaoFinalContext ctx) {
+        Expressao x = new Expressao(visit(ctx.getChild(0)));
+        return x;
     }
 
     public void addVariables(String variable){

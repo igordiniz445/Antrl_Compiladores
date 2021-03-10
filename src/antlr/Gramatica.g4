@@ -14,6 +14,7 @@ expr: expr'+'expr      #Soma
     | expr '*' expr    #Multiplicacao
     | expr '/' expr    #Divisao
     | expr '-' expr    #Subtracao
+    | expr ';'  #ExpressaoFinal
     ;
 
 TYPE: ('int'|'float');

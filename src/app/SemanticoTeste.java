@@ -17,10 +17,7 @@ public class SemanticoTeste {
         String fileName = "src\\test\\programaA.txt";
         GramaticaParser parser = getParser(fileName);
 
-        System.out.println("Parser:\n"+parser);
         ParseTree antlrAST = parser.prog();
-
-        System.out.println("Codigo:\n"+antlrAST);
 
         AntlrToProgram progVisitor = new AntlrToProgram();
         Program progFonte = progVisitor.visit(antlrAST);
@@ -35,6 +32,7 @@ public class SemanticoTeste {
             }
 
         }
+        System.out.println("***Tabela de simbolos");
         progVisitor.printSymbleTable();
 
 

@@ -14,10 +14,10 @@ public class Declaracao extends Expression{
     @Override
     public String toString() {
         if (type.equals("int")){
-            return type+" "+id+"="+ivalue;
+            return type+" "+id+"="+ivalue + ";";
         }
         else {
-            return type+" "+id+"="+fvalue;
+            return type+" "+id+"="+fvalue + ";";
         }
     }
 }
