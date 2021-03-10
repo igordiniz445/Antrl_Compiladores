@@ -28,25 +28,11 @@ public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
 	T visitDeclaracao(GramaticaParser.DeclaracaoContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Multiplicacao}
-	 * labeled alternative in {@link GramaticaParser#mult}.
+	 * labeled alternative in {@link GramaticaParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitMultiplicacao(GramaticaParser.MultiplicacaoContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Divisao}
-	 * labeled alternative in {@link GramaticaParser#div}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDivisao(GramaticaParser.DivisaoContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Subtracao}
-	 * labeled alternative in {@link GramaticaParser#sub}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSubtracao(GramaticaParser.SubtracaoContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Numero}
 	 * labeled alternative in {@link GramaticaParser#expr}.
@@ -68,4 +54,18 @@ public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSoma(GramaticaParser.SomaContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Subtracao}
+	 * labeled alternative in {@link GramaticaParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubtracao(GramaticaParser.SubtracaoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Divisao}
+	 * labeled alternative in {@link GramaticaParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivisao(GramaticaParser.DivisaoContext ctx);
 }

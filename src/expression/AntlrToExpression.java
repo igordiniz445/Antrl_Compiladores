@@ -41,11 +41,16 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
             expectedType= "float";
             decl.fvalue=Float.parseFloat(value);
 
-        }
-        else{
+        }else{
             expectedType= "int";
             decl.ivalue=Integer.parseInt(value);
         }
+        if(this.hasVariable(id)){
+            semanticErrors.add("Erro: variável "+id+" já foi declarada.");
+        }else{
+            addVariables(id);
+        }
+        //@TODO : ARRUMAR VARIAVEIS JA DECLARADAS
         if (!Objects.equals(type,expectedType)){
             semanticErrors.add("Erro: Variável " + id + " é "+type+", mas o valor atribuído é "+expectedType+" (" + linha + "," + coluna + ").");
         }
@@ -132,5 +137,13 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
             subtracao.setType("float");
         }
         return  subtracao;
+    }
+
+    public void addVariables(String variable){
+        this.declaredVariables.add(variable);
+    }
+
+    public boolean hasVariable(String id){
+        return declaredVariables.contains(id);
     }
 }

@@ -14,5 +14,11 @@ public class Programa extends Expression{
         this.expressionList.add(e);
     }
 
+    public void printExpressions(){
+        System.out.println("Programa fonte:");
+        for (int i=0; i<this.expressionList.size();i++){
+            System.out.println(this.expressionList.get(i).toString());
+        }
+    }
 
 }

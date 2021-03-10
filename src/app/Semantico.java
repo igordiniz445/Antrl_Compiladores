@@ -20,10 +20,12 @@ public class Semantico {
             System.out.println("PEGOU O ARQUIVO");
 
             ParseTree ast = parser.prog();
-            System.out.println("Gerou a arvore");
+
             AntlrToProgram progVisitor = new AntlrToProgram();
             System.out.println("***Visitando AST");
             Programa prog = progVisitor.visit(ast);
+            prog.printExpressions();
+
 
             if(progVisitor.semanticError.isEmpty()){
                 System.out.println("Resultado da Análise: OK");
@@ -35,8 +37,6 @@ public class Semantico {
                 }
             }
 
-
-        
 
     }
 

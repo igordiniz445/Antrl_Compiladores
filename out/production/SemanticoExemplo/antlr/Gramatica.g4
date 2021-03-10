@@ -6,17 +6,14 @@ grammar Gramatica;
 
 prog: (decl|expr)+ EOF #Programa
     ;
-decl: TYPE ID'='NUM     #Declaracao
+decl: TYPE ID'='NUM ';'     #Declaracao
     ;
-mult: expr '*' expr     #Multiplicacao
-    ;
-div: expr '/' expr     #Divisao
-    ;
-sub: expr '-' expr     #Subtracao
-    ;
-expr: expr'+'expr       #Soma
-    | NUM               #Numero
-    | ID                #Variavel
+expr: expr'+'expr      #Soma
+    | NUM              #Numero
+    | ID               #Variavel
+    | expr '*' expr    #Multiplicacao
+    | expr '/' expr    #Divisao
+    | expr '-' expr    #Subtracao
     ;
 
 TYPE: ('int'|'float');
