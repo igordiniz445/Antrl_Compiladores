@@ -71,6 +71,7 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
         Expression left=visit(ctx.getChild(0));
         Expression right=visit(ctx.getChild(2));
         Multiplicacao multiplicacao = new Multiplicacao(left,right);
+        /*Verificação de tipos antes de realizar a expressão*/
         if (left.type=="int" && right.type=="int"){
             multiplicacao.setType("int");
         }
@@ -102,6 +103,7 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
         Expression left=visit(ctx.getChild(0));
         Expression right=visit(ctx.getChild(2));
         Soma soma = new Soma(left,right);
+        /*Verificação de tipos antes de realizar a expressão*/
         if (left.type=="int" && right.type=="int"){
             soma.setType("int");
         }
@@ -116,6 +118,7 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
         Expression left=visit(ctx.getChild(0));
         Expression right=visit(ctx.getChild(2));
         Subtracao subtracao = new Subtracao(left,right);
+        /*Verificação de tipos antes de realizar a expressão*/
         if (left.type=="int" && right.type=="int"){
             subtracao.setType("int");
         }
@@ -130,9 +133,11 @@ public class AntlrToExpression extends GramaticaBaseVisitor<Expression> {
         Expression left=visit(ctx.getChild(0));
         Expression right=visit(ctx.getChild(2));
         Divisao divisao = new Divisao(left,right);
+        /*Verificação de tipos antes de realizar a expressão*/
         if (left.type=="int" && right.type=="int"){
             divisao.setType("int");
         }else if (right.toString().equals("0")){
+            /*Verificação se o divisor é diferente de 0*/ 
             semanticErrors.add("Não é possível realizar divisão por 0");
         }else{
             divisao.setType("float");
